@@ -24,7 +24,7 @@ public class ControllerScript : MonoBehaviour {
 
       GameObject adaptor = Instantiate(pickedAdaptorPrefab, Vector3.zero, Quaternion.identity);
       adaptor.transform.SetParent(adaptorButtons[i].transform);
-      adaptor.transform.localPosition = new Vector3(0f, adaptor.transform.localPosition.y, adaptor.transform.localPosition.y);
+      adaptor.transform.localPosition = new Vector3(0f, 1.44f, -0.12f);
     }
   }
 }
