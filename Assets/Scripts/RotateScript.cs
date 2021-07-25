@@ -22,7 +22,7 @@ public class RotateScript : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
 
         if ((Time.time - lastRotateTime) > 0.5f) {
-          Debug.Log("ready");
+
 
           if (vertical > 0) {
             flip(90f, 0f);
