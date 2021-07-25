@@ -159,14 +159,7 @@ public class ConfigurationScript : MonoBehaviour
         AdaptorModel newAdaptor = CreateRandomAdaptor();
 
         if (!newAdaptor.isCorrect(phoneModel)) {
-
-          // Debug.Log("Incorrect and returning:");
-          // newAdaptor.Log();
-
-
           return newAdaptor;
-        } else {
-          // Debug.Log("correct");
         }
       }
     }
