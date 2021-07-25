@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 33536720}
   - component: {fileID: 33536719}
   m_Layer: 5
-  m_Name: Voltage
+  m_Name: Amperage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -972,7 +972,8 @@ MonoBehaviour:
   buzzAdaptor: {fileID: 919132149155446097, guid: 7892488f52aa3be47b067d17c73ffcbc, type: 3}
   droidAdaptor: {fileID: 919132149155446097, guid: 7a0f4298e86bad348a00fe8fbca481f5, type: 3}
   semiAdaptor: {fileID: 919132149155446097, guid: dec4db863c95cb04c9bd129456726155, type: 3}
-  pinsVirtualCamera: {fileID: 0}
+  pinsVirtualCamera: {fileID: 327548132}
+  amperageText: {fileID: 33536719}
 --- !u!1 &318809940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,10 +2742,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 327548132}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Cinemachine.CinemachineVirtualCameraBase, Cinemachine
-        m_MethodName: set_Priority
-        m_Mode: 3
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4671,7 +4672,7 @@ GameObject:
   - component: {fileID: 1626800585}
   - component: {fileID: 1626800584}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Battery text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

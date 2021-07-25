@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using TMPro;
+
+
+
 public class RotateScript : MonoBehaviour
 {
     public float xRotation = 0f;
     public float yRotation = 0f;
+
 
     private float smooth = 5.0f;
     public float lastRotateTime = 0f;
@@ -14,12 +19,14 @@ public class RotateScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         Debug.Log("hey there");
     }
 
     void Update() {
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
+        
 
         if ((Time.time - lastRotateTime) > 0.5f) {
 
