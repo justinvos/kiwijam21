@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+  public TextMeshProUGUI batteryText;
+
 	private double state; // Current elapsed miliseconds, max of this.timer.
 
 	public int percent;  // Phone percent displayed on timer. 
@@ -45,7 +47,10 @@ public class Timer : MonoBehaviour
 		if (elapsed > this.timer && this.gameState)
 		{
 			this.gameState = false;
-			// UnityEngine.Debug.Log("Game End!"); 
+			UnityEngine.Debug.Log("run out of time!"); 
+
+      FindObjectOfType<AudioManager>().Play("timeout");
+
 			this.percent = 0;
 			// UnityEngine.Debug.Log(this.percent); 
 		}
@@ -70,6 +75,7 @@ public class Timer : MonoBehaviour
 				}
 			}
 			// UnityEngine.Debug.Log(this.percent);
+      batteryText.text = this.percent + "%";
 		}
 
     }

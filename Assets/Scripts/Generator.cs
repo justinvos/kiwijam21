@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 enum Colour
@@ -81,7 +82,10 @@ public class Generator {
 
       if (isBalancedAdaptors(allAdaptorModels)) {
         this.correctAdaptor = correctAdaptorModel;
-        return allAdaptorModels;
+
+        AdaptorModel[] shuffledAdaptorModels = allAdaptorModels.OrderBy(x => Mathf.FloorToInt(Random.value * allAdaptorModels.Length)).ToArray();
+
+        return shuffledAdaptorModels;
       }
     }
   }

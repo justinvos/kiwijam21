@@ -20,12 +20,16 @@ public class ControllerScript : MonoBehaviour {
 
   public int activeAdaptor = -1;
 
+  public AudioManager audioManager;
   public AudioClip successAudioClip;
   public AudioClip failAudioClip;
 
   private Generator generator;
 
+
   void Start() {
+    audioManager = FindObjectOfType<AudioManager>();
+
     GameObject[] adaptorButtons = new GameObject[6];
     
     for (int i = 0; i < 6; i++) {
@@ -83,8 +87,10 @@ public class ControllerScript : MonoBehaviour {
 
     if (clickedAdaptor.isCorrect(generator.phoneModel)) {
       Debug.Log("you win");
+      audioManager.Play("win");
     } else {
       Debug.Log("you lose");
+      audioManager.Play("wrong");
     }
   }
 }
