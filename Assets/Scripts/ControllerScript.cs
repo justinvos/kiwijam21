@@ -26,6 +26,15 @@ public class ControllerScript : MonoBehaviour {
 
   private Generator generator;
 
+  public Image brandImage;
+
+  public Sprite manufacturerSpriteA;
+  public Sprite manufacturerSpriteB;
+  public Sprite manufacturerSpriteC;
+  public Sprite manufacturerSpriteD;
+  public Sprite manufacturerSpriteE;
+  public Sprite manufacturerSpriteF;
+
 
   void Start() {
     audioManager = FindObjectOfType<AudioManager>();
@@ -47,9 +56,19 @@ public class ControllerScript : MonoBehaviour {
     adaptorPrefabs.Add("C", droidAdaptor);
     adaptorPrefabs.Add("D", semiAdaptor);
 
+    Dictionary<string, Sprite> manufacturerSprites = new Dictionary<string, Sprite>();
+    manufacturerSprites.Add("A", manufacturerSpriteA);
+    manufacturerSprites.Add("B", manufacturerSpriteB);
+    manufacturerSprites.Add("C", manufacturerSpriteC);
+    manufacturerSprites.Add("D", manufacturerSpriteD);
+    manufacturerSprites.Add("E", manufacturerSpriteE);
+    manufacturerSprites.Add("F", manufacturerSpriteF);
 
     generator = new Generator();
 
+
+    // set phone brand sprite
+    brandImage.sprite = manufacturerSprites[generator.phoneModel.manufacturer];
 
     // set phone amperage
     amperageText.text = generator.phoneModel.amperage + "A";
