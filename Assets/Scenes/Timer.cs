@@ -40,16 +40,37 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Time.time * 1000 > this.offset + this.timer && this.gameState)
+		// Time since the game began.
+		double elapsed = (Time.time * 1000) - this.offset; 
+		if (elapsed > this.timer && this.gameState)
 		{
 			this.gameState = false;
-			UnityEngine.Debug.Log(Time.time * 1000); 
-			UnityEngine.Debug.Log("Game End!"); 
+			// UnityEngine.Debug.Log("Game End!"); 
+			this.percent = 0;
+			// UnityEngine.Debug.Log(this.percent); 
 		}
-		else if (Time.time * 1000 > this.offset && this.gameState) 
+		else if (elapsed > 0 && this.gameState) 
 		{
-			UnityEngine.Debug.Log(Time.time * 1000); 
-			UnityEngine.Debug.Log("Game Begin!"); 
+			// This is true if the game is running. 
+			// UnityEngine.Debug.Log("Game Begin!"); 
+
+			if (elapsed < (this.timer * 0.75)) 
+			{
+				this.percent = 10 - Mathf.RoundToInt((float) (elapsed / (this.timer * 0.09375)));
+			}
+			else 
+			{
+				if (this.timer - elapsed > (0.125 * this.timer)) 
+				{
+					this.percent = 2; 
+				}
+				else 
+				{
+					this.percent = 1;
+				}
+			}
+			// UnityEngine.Debug.Log(this.percent);
 		}
+
     }
 }
