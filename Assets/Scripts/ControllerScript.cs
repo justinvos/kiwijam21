@@ -11,7 +11,7 @@ public class ControllerScript : MonoBehaviour {
   public GameObject droidAdaptor;
   public GameObject semiAdaptor;
   
-  public GameObject pinsVirtualCamera;
+  public CinemachineVirtualCamera pinsVirtualCamera;
 
   public TextMeshProUGUI amperageText;
 
@@ -53,7 +53,7 @@ public class ControllerScript : MonoBehaviour {
     float startX = -3.62f;
     float incrementX = 1.46f;
     Debug.Log("HandleButtonClick:" + index);
-    pinsVirtualCamera.transform.position = new Vector3(startX + (incrementX * index), pinsVirtualCamera.transform.position.y, pinsVirtualCamera.transform.position.z);
-
+    pinsVirtualCamera.gameObject.transform.position = new Vector3(startX + (incrementX * index), pinsVirtualCamera.gameObject.transform.position.y, pinsVirtualCamera.transform.position.z);
+    pinsVirtualCamera.Priority = 22;
   }
 }
