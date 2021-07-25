@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControllerScript : MonoBehaviour {
   public GameObject armourAdaptor;
   public GameObject buzzAdaptor;
   public GameObject droidAdaptor;
   public GameObject semiAdaptor;
+  
+  public GameObject pinsVirtualCamera;
 
   void Start() {
     GameObject[] adaptorButtons = new GameObject[6];
     
     for (int i = 0; i < 6; i++) {
       adaptorButtons[i] = GameObject.Find("AdaptorButton" + i);
+      Button button = adaptorButtons[i].GetComponent<Button>();
+      int index = i;
+
+      button.onClick.AddListener(() => HandleButtonClick(index));
     }
 
     // GameObject[] adaptorPrefabs = new GameObject[] { armourAdaptor, buzzAdaptor, droidAdaptor, semiAdaptor };
@@ -32,5 +39,12 @@ public class ControllerScript : MonoBehaviour {
       adaptor.transform.SetParent(adaptorButtons[i].transform);
       adaptor.transform.localPosition = new Vector3(0f, 1.44f, -0.12f);
     }
+  }
+
+  void HandleButtonClick(int index) {
+    float startX = -3.62f;
+    float incrementX = 1.46f;
+    Debug.Log("HandleButtonClick:" + index);
+    pinsVirtualCamera.transform.position = new Vector3(startX + (incrementX * index), pinsVirtualCamera.transform.position.y, pinsVirtualCamera.transform.position.z); 
   }
 }
