@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e9fb167fda6b76b47a0d5d51c669ed16
+guid: 7a0f4298e86bad348a00fe8fbca481f5
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -12,6 +12,12 @@ ModelImporter:
   - first:
       74: -8565428575690607568
     second: Droid|Putdown
+  - first:
+      74: -1354649580651069042
+    second: Droid|Pickup.001
+  - first:
+      74: 2998636455847554524
+    second: Droid|Pickup.002
   externalObjects: {}
   materials:
     materialImportMode: 2
