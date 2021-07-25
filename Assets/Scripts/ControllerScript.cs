@@ -15,7 +15,7 @@ public class ControllerScript : MonoBehaviour {
       adaptorButtons[i] = GameObject.Find("AdaptorButton" + i);
     }
 
-    GameObject[] adaptorPrefabs = new GameObject[] { armourAdaptor, buzzAdaptor, droidAdaptor, semiAdaptor };
+    // GameObject[] adaptorPrefabs = new GameObject[] { armourAdaptor, buzzAdaptor, droidAdaptor, semiAdaptor };
     Dictionary<string, GameObject> adaptorPrefabs = new Dictionary();
     adaptorPrefabs.Add("A", armourAdaptor);
     adaptorPrefabs.Add("B", buzzAdaptor);
