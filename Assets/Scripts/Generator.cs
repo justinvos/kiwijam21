@@ -46,7 +46,7 @@ public class Generator {
       this.adaptors = generateAdaptors(phoneModel);
 
       Debug.Log("====================");
-      foreach (AdaptorModel adaptorModel in adaptorModels) {
+      foreach (AdaptorModel adaptorModel in adaptors) {
         adaptorModel.Log(phoneModel);
       }
   }

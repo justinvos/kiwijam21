@@ -16,7 +16,7 @@ public class ControllerScript : MonoBehaviour {
     }
 
     // GameObject[] adaptorPrefabs = new GameObject[] { armourAdaptor, buzzAdaptor, droidAdaptor, semiAdaptor };
-    Dictionary<string, GameObject> adaptorPrefabs = new Dictionary();
+    Dictionary<string, GameObject> adaptorPrefabs = new Dictionary<string, GameObject>();
     adaptorPrefabs.Add("A", armourAdaptor);
     adaptorPrefabs.Add("B", buzzAdaptor);
     adaptorPrefabs.Add("C", droidAdaptor);
