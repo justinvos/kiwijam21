@@ -16,11 +16,17 @@ public class ControllerScript : MonoBehaviour {
     }
 
     GameObject[] adaptorPrefabs = new GameObject[] { armourAdaptor, buzzAdaptor, droidAdaptor, semiAdaptor };
+    Dictionary<string, GameObject> adaptorPrefabs = new Dictionary();
+    adaptorPrefabs.Add("A", armourAdaptor);
+    adaptorPrefabs.Add("B", buzzAdaptor);
+    adaptorPrefabs.Add("C", droidAdaptor);
+    adaptorPrefabs.Add("D", semiAdaptor);
 
+
+    Generator generator = new Generator();
 
     for (int i = 0; i < 6; i++) {
-      int pickedAdaptorIndex = Mathf.FloorToInt(Random.value * adaptorPrefabs.Length);
-      GameObject pickedAdaptorPrefab = adaptorPrefabs[pickedAdaptorIndex];
+      GameObject pickedAdaptorPrefab = adaptorPrefabs[generator.adaptors[i].shape];
 
       GameObject adaptor = Instantiate(pickedAdaptorPrefab, Vector3.zero, Quaternion.identity);
       adaptor.transform.SetParent(adaptorButtons[i].transform);
