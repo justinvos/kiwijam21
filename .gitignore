@@ -2,3 +2,5 @@ Library
 Logs
 Temp
 UserSettings
+*.meta
+.DS_Store
