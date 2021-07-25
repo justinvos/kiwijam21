@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class ControllerScript : MonoBehaviour {
   public GameObject armourAdaptor;
@@ -9,7 +10,9 @@ public class ControllerScript : MonoBehaviour {
   public GameObject droidAdaptor;
   public GameObject semiAdaptor;
   
-  public GameObject pinsVirtualCamera;
+  public CinemachineVirtualCamera pinsVirtualCamera;
+
+  public Text amperageText;
 
   void Start() {
     GameObject[] adaptorButtons = new GameObject[6];
@@ -32,6 +35,10 @@ public class ControllerScript : MonoBehaviour {
 
     Generator generator = new Generator();
 
+
+    // set phone amperage
+    amperageText.text = generator.phoneModel.amperage + "A";
+
     for (int i = 0; i < 6; i++) {
       GameObject pickedAdaptorPrefab = adaptorPrefabs[generator.adaptors[i].shape];
 
@@ -45,6 +52,8 @@ public class ControllerScript : MonoBehaviour {
     float startX = -3.62f;
     float incrementX = 1.46f;
     Debug.Log("HandleButtonClick:" + index);
-    pinsVirtualCamera.transform.position = new Vector3(startX + (incrementX * index), pinsVirtualCamera.transform.position.y, pinsVirtualCamera.transform.position.z); 
+    pinsVirtualCamera.gameObject.transform.position = new Vector3(startX + (incrementX * index), pinsVirtualCamera.gameObject.transform.position.y, pinsVirtualCamera.transform.position.z);
+
+    pinsVirtualCamera.Priority = 20;
   }
 }
